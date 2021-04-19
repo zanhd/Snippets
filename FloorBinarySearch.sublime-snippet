@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[
+ll floor_array(ll x, ll a[], ll beg, ll end)
+{
+	// less than or equal to
+	//returns the postion of floor element if -1 => not found
+	ll pos = -1;
+	while (beg <= end)
+	{
+		ll mid = (beg + end) / 2;
+		if (a[mid] <= x)
+		{
+			pos = mid;
+			beg = mid + 1;
+		}
+		else end = mid - 1;
+	}
+
+	return pos;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>floor_array</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

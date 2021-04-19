@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+//inverse modulo : pow(a,-1) % m = pow(a,m - 2) % m : a and m should be coprime.
+ll fastexpo(ll a, ll n, ll m = INF)
+{
+	if (n == 1) return a;
+	ll ans = fastexpo(a, n / 2, m);
+	ans = ModMultiply(ans, ans, m);
+	if (n & 1) ans = ModMultiply(ans, a, m);
+	return ans;
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>fastexpo</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

@@ -1,0 +1,31 @@
+<snippet>
+	<content><![CDATA[
+const ll SIZE = 1e5;
+ll BIT[SIZE + 1];
+
+void update(ll i,ll x,ll n = SIZE)
+{	
+	while(i <= SIZE)
+	{
+		BIT[i] += x;
+		i += (i & (i & (-i)));
+	}
+}
+
+ll sum(int i)
+{
+	ll ans = 0;
+	while(i > 0)
+	{
+		ans += BIT[i];
+		i -= (i & (-i)); 
+	}
+	return ans;
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>fenwick tree</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

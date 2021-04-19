@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[
+ll ceil_array(ll x, ll a[], ll beg, ll end)
+{
+	// greater than or equal to
+	//returns the postion of ceil element if -1 => not found
+	ll pos = -1;
+	while (beg <= end)
+	{
+		ll mid = (beg + end) / 2;
+		if (a[mid] >= x)
+		{
+			pos = mid;
+			end = mid - 1;
+		}
+		else beg = mid + 1;
+	}
+
+	return pos;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>ceil_array</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

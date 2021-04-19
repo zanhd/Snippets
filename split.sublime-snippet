@@ -1,0 +1,22 @@
+<snippet>
+	<content><![CDATA[
+vector<string> split(string str)
+{
+    vector<string> ans;
+    string now = "";
+    for(auto x : str)
+    {
+        if(x == ' ') { if(now != "") ans.push_back(now); now = ""; }
+        else now += x;
+    }
+    
+    if(now != "") ans.push_back(now);
+    
+    return ans;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>split_string</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	 <scope>source.c++</scope> -->
+</snippet>

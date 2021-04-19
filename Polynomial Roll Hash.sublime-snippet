@@ -1,0 +1,22 @@
+<snippet>
+	<content><![CDATA[
+//hash(s) = s[0] + s[1]*p + s[2]*p^2 + s[3]*p^3 ...... + s[n-1]*p^(n-1) mod m
+//Note : p >= size of char set (a - z etc) and p & m both are primes
+ll gethash(string key)
+{
+	ll value = 0;
+	ll p = 31;
+	ll p_power = 1;
+	for (auto ch : key)
+	{
+		value = (value + (ch - 'a' + 1) * p_power) % MOD;
+		p_power = (p_power * p) % MOD;
+	}
+	return value;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>stringhash</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope> 
+</snippet>

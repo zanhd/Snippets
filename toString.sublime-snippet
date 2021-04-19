@@ -1,0 +1,27 @@
+<snippet>
+	<content><![CDATA[
+string toString(ll n)
+{
+	bool isneg = (n >= 0)? 0 : 1; n = abs(n);
+	
+	if (n == 0) { return "0"; } //V.IMP
+	stack<ll> S;
+	while (n)
+	{
+		S.push(n % 10);
+		n /= 10;
+	}
+	string ans = "";
+	while (!S.empty())
+	{
+		ans += char('0' + S.top()); S.pop();
+	}
+
+	return (isneg) ? "-" + ans : ans;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+   <tabTrigger>tostring</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

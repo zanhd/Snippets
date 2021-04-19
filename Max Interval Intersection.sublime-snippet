@@ -1,0 +1,34 @@
+<snippet>
+	<content><![CDATA[
+ll findmxIntersection(ll l[], ll r[], ll n)
+{
+	//very important algorithm
+	sort(l, l + n);
+	sort(r, r + n);
+
+	ll i = 0, j = 0;
+
+	ll ans = 0;
+	ll now = 0;
+	while (i < n && j  < n)
+	{
+		if (l[i] <= r[j]) { now++; i++; }
+		else
+		{
+			now--;
+			j++;
+		}
+
+		ans = max(ans, now);
+	}
+
+	ans = max(ans, now);
+
+	return ans;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>intervalintersection</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope> 
+</snippet>

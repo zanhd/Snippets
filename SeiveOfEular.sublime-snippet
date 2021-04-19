@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[
+const int N = 1.5 * 1e7 + 5;
+ll prime[N];
+ 
+void seive()
+{
+	for (int i = 2; i * i <= N; ++i)
+	{
+		if (!prime[i])
+		{
+			for (int j = i * i; j <= N; j += i)
+			{
+				prime[j] = i;
+			}
+		}
+	}
+ 
+	loop(i, 2, N) if (!prime[i]) prime[i] = i;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>seiveEular</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

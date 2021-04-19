@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+BufferedWriter output = new BufferedWriter(new OutputStreamWriter(System.out)); // output.write(); and output.flush();
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>fastoutput</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.java</scope>
+</snippet>

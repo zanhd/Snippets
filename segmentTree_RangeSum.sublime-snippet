@@ -50,7 +50,7 @@ struct segmentTree
 		int mid = (beg + end) / 2;
 
 		if(i <= mid) updateHelper(2 * node, beg, mid, i, value); //left-subTree
-		else updateHelper(2 * node, mid + 1, end, i, value); //right - subTree
+		else updateHelper(2 * node + 1, mid + 1, end, i, value); //right - subTree
 
 		st[node] = st[2 * node] + st[2 * node + 1];
 	}

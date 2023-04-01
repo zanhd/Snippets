@@ -1,0 +1,53 @@
+<snippet>
+	<content><![CDATA[
+struct segmentTree
+{
+	vector<int> st;
+	int n = 0;
+	
+	void init(int _n)
+	{
+		n = 4 * _n + 1; //1 Based
+		st.resize(n , 0);
+	}
+
+	void buildHelper(int node, int beg, int end, vector<int> &a)
+	{
+		if(beg == end)
+		{
+			//leaf
+			st[beg] = a[beg];
+			return;
+		}
+
+		int mid = (beg + end) / 2;
+
+		buildHelper(2 * node, beg, mid, a); 			//left-subTree
+		buildHelper(2 * node + 1, mid + 1, end, a);		//right-subTree
+
+		st[node] = st[2 * node] + st[2 * node + 1];
+		
+	}
+
+	void build(vector<int> &a)
+	{
+		buildHelper(1, 0, a.size() - 1, a);
+	}
+
+	void update(int i, int value)
+	{
+
+	}
+
+	int sumOfRange(int l, int r)
+	{
+
+	}
+};
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>segmentTree</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

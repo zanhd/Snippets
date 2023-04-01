@@ -25,7 +25,7 @@ struct segmentTree
 		buildHelper(2 * node, beg, mid, a); 			//left-subTree
 		buildHelper(2 * node + 1, mid + 1, end, a);		//right-subTree
 
-		st[node] = st[2 * node] + st[2 * node + 1];
+		st[node] = st[2 * node] + st[2 * node + 1];   		//condition for segment tree
 		
 	}
 

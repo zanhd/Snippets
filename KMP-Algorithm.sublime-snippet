@@ -13,7 +13,7 @@ vector<ll> create_lps(string str)
 		}
 		else
 		{
-			if (j) j = lps[j - 1];
+			if (j) j = lps[j - 1]; //note that we do not increment
 			else { lps[i] = 0; i++; }
 		}
 	}
